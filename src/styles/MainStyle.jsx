@@ -33,19 +33,19 @@ const MainStyle = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    backgroundColor: 'rgba(240, 240, 240, 0.7)',
+    backgroundColor: 'rgba(240, 240, 240, 1)',
     padding: 15,
-    borderRadius: 60,
+    borderRadius: 17,
     margin: 10,
     width: 350,
     height: 170,
 
     //shadows 
     shadowColor: 'rgba(240, 240, 240, 1)',
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.3, 
+    shadowOffset: { width: 8, height: 8 },
+    shadowOpacity: 1, 
     shadowRadius: 10,
-    elevation: 16, 
+    elevation: 0, 
   },
   buttonText: {
     color: '#000',
