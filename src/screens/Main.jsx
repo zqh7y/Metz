@@ -14,12 +14,12 @@ const Main = ({ navigation }) => {
       </View>
       <View style={MainStyle.buttonContainer}>
         <TouchableOpacity style={MainStyle.button} onPress={() => navigation.navigate('Create')}>
-          <Text style={MainStyle.buttonText}>Create Meeting</Text>
           <Image source={require('../../assets/images/park.png')} style={MainStyle.image} />
+          <Text style={MainStyle.buttonText}>Create Meeting</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={MainStyle.button}>
-          <Text style={MainStyle.buttonText}>Meeting History</Text>
+        <TouchableOpacity style={MainStyle.button2}>
           <Image source={require('../../assets/images/time.png')} style={MainStyle.image2} />
+          <Text style={MainStyle.buttonText}>Meeting History</Text>
         </TouchableOpacity>
       </View>
     </LinearGradient>
