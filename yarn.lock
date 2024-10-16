@@ -3,7 +3,7 @@
 
 
 "@0no-co/graphql.web@^1.0.5":
-  version "1.0.8"
+  version "1.0.8" 
   resolved "https://registry.npmjs.org/@0no-co/graphql.web/-/graphql.web-1.0.8.tgz"
   integrity sha512-8BG6woLtDMvXB9Ajb/uE+Zr/U7y4qJ3upXi0JQHZmsKUJa7HjF/gFvmL2f3/mSmfZoQGRr9VoY97LCX2uaFMzA==
 
