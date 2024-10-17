@@ -8,7 +8,7 @@ const MainStyle = StyleSheet.create({
     padding: 20,
   },
   titleContainer: {
-    marginTop: 40,
+    marginTop: 70,
   },
   appTitle: {
     fontSize: 80,
@@ -33,12 +33,35 @@ const MainStyle = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    backgroundColor: 'rgba(240, 240, 240, 1)',
+    backgroundColor: 'rgba(255, 255, 255, .99)',
     padding: 15,
-    borderRadius: 17,
-    margin: 10,
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
+    margin: 2,
     width: 350,
-    height: 170,
+    height: 80,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+
+    //shadows 
+    shadowColor: 'rgba(240, 240, 240, 1)',
+    shadowOffset: { width: 8, height: 8 },
+    shadowOpacity: 1, 
+    shadowRadius: 10,
+    elevation: 0, 
+  },
+  button2: {
+    backgroundColor: 'rgba(255, 255, 255, 1)',
+    padding: 15,
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40,
+    margin: 3,
+    width: 350,
+    height: 80,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
 
     //shadows 
     shadowColor: 'rgba(240, 240, 240, 1)',
@@ -53,20 +76,15 @@ const MainStyle = StyleSheet.create({
     fontSize: 20,
     fontFamily: "Kan",
     letterSpacing: 2,
+    right: 50,
   },
   image: {
-    width: 180,
-    height: 180,
-    position: "absolute",
-    bottom: -30,
-    left: 82,
+    width: 80,
+    height: 80,
   },
   image2: {
-    width: 150,
-    height: 120,
-    position: "absolute",
-    bottom: 10,
-    left: 90,
+    width: 70,
+    height: 70,
   },
 });
 
