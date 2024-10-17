@@ -9,7 +9,7 @@ const CreateStyle = StyleSheet.create({
   },
   title: {
     fontSize: 36,
-    marginBottom: 10,
+    marginBottom: -2,
     fontFamily: "Pac",
     color: '#fff',
   },
@@ -24,13 +24,14 @@ const CreateStyle = StyleSheet.create({
     padding: 5,
     paddingHorizontal: 10,
     backgroundColor: '#fff',
-    marginTop: 20,
-    borderRadius: 15,
+    marginTop: 5,
+    borderBottomEndRadius: 15,
+    borderBottomStartRadius: 15,
     width: '104%',
     alignItems: 'center',
   },
   description: {
-    fontSize: 16,
+    fontSize: 14,
     color: '#fff',
     fontFamily: "Kan",
     textAlign: 'center',
@@ -46,11 +47,12 @@ const CreateStyle = StyleSheet.create({
     height: 40,
     borderColor: 'rgba(0, 0, 0, .7)',
     borderWidth: 1,
-    marginVertical: 10,
+    marginVertical: 7,
     paddingHorizontal: 10,
-    width: '89%',
-    borderBottomLeftRadius: 10,
-    borderTopLeftRadius: 10,
+    width: '100%',
+    paddingRight: 73,
+    borderRadius: 5,
+    fontFamily: 'Kan',
   },
   loadingText: {
     fontSize: 18,
@@ -61,7 +63,7 @@ const CreateStyle = StyleSheet.create({
   nextButton: {
     flexDirection: 'row',
     backgroundColor: '#fff',
-    borderRadius: 150,
+    borderRadius: 0,
     alignItems: 'center',
     justifyContent: "space-between",
     marginTop: 10,
@@ -77,11 +79,18 @@ const CreateStyle = StyleSheet.create({
   text: {
     fontFamily: "Kan",
     letterSpacing: 1,
-    color: '#000', // Adjust text color for visibility
+    color: '#000',
   },
-  hr: {
-    height: 18,
-    width: 0,
+  text2: {
+    fontFamily: "Kan",
+    letterSpacing: 1,
+    color: '#000',
+    top: 20,
+    right: 30,
+  },
+  hr1: {
+    height: 31,
+    width: 1,
     backgroundColor: "#000",
     marginHorizontal: 18,
     shadowColor: 'rgba(240, 240, 240, 1)',
@@ -103,12 +112,12 @@ const CreateStyle = StyleSheet.create({
     justifyContent: 'space-between',
   },
   submitButton: {
-    backgroundColor: '#FF7E5F',
-    padding: 8,
-    borderTopRightRadius: 10,
-    borderBottomRightRadius: 10,
+    padding: 1,
+    paddingHorizontal: 20,
     justifyContent: 'center',
     alignItems: 'center',
+    right: 65,
+    borderLeftWidth: 1,
   },
   viewPager: {
     flex: 1,
@@ -119,12 +128,13 @@ const CreateStyle = StyleSheet.create({
     alignItems: 'center',
   },
   timeContainer: { // New style for the time selection container
-    padding: 20,
+    padding: 7,
     backgroundColor: '#fff',
-    borderRadius: 15,
-    width: '100%',
+    borderTopStartRadius: 15,
+    borderTopEndRadius: 15,
+    width: '104%',
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 10,
   },
   timeText: {
     fontSize: 20,
@@ -161,11 +171,9 @@ const CreateStyle = StyleSheet.create({
     marginVertical: 10,
     paddingHorizontal: 10,
   },
-  calendarButton: { // New style for calendar buttons
+  calendarButton: { 
     backgroundColor: '#FF7E5F',
     borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 15,
     marginVertical: 5,
   },
   calendarButtonText: {
@@ -174,23 +182,35 @@ const CreateStyle = StyleSheet.create({
   },
   timeDigitsContainer: {
     flexDirection: 'row',
-    justifyContent: 'center',
-    marginVertical: 20,
   },
   timeDigit: {
-    width: 40,
-    height: 50,
-    backgroundColor: '#222',
-    borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 2,
   },
   timeDigitText: {
-    color: '#fff',
     fontSize: 25,
     fontFamily: 'Kan',
   },
+  row: {
+    flexDirection: 'row',
+    justifyContent: "space-between",
+    width: 320,
+  },
+  timeText: {
+    fontSize: 15,
+    right: 70,
+    bottom: 10,
+    fontFamily: "Pac"
+  },
+  inputName: {
+    fontSize: 15,
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    padding:5,
+    paddingHorizontal: 10,
+    fontFamily: 'Kan',
+    width: '100%',
+    letterSpacing: 1,
+    borderWidth: 1,
+  }
 });
 
 export default CreateStyle;
