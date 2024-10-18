@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, Alert, TextInput, Clipboard } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import ConfirmStyle from '../styles/ConfirmStyle';
 import Notification from '../components/Notification';
+import { Switch } from 'react-native';
 
 const Confirm = ({ route, navigation }) => {
   const { meetingName, inputAddress, selectedDate, selectedTime, markerLocation } = route.params;
   const [notificationVisible, setNotificationVisible] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState('');
+  const [isPrivate, setIsPrivate] = useState(false);
+  const [randomLink, setRandomLink] = useState('https://meeting.link/' + Math.random().toString(36).substring(7));
 
   const handleConfirm = () => {
     const currentTime = new Date();
@@ -26,6 +29,12 @@ const Confirm = ({ route, navigation }) => {
       setNotificationVisible(true);
       setTimeout(() => navigation.navigate("Main"), 5000);
     }
+  };
+
+  const handleCopyLink = () => {
+    Clipboard.setString(randomLink);
+    setNotificationMessage("Link copied to clipboard!");
+    setNotificationVisible(true);
   };
 
   return (
@@ -58,6 +67,28 @@ const Confirm = ({ route, navigation }) => {
         )}
         <Text style={ConfirmStyle.address}>{inputAddress}</Text>
       </View>
+
+      <View style={ConfirmStyle.switchContainer}>
+        <Text style={ConfirmStyle.switchLabel}>Private Meeting</Text>
+        <Switch
+          value={isPrivate}
+          onValueChange={setIsPrivate}
+          thumbColor={isPrivate ? '#FF7E5F' : '#ccc'}
+        />
+      </View>
+
+      {isPrivate && (
+        <View style={ConfirmStyle.linkContainer}>
+          <TextInput
+            style={ConfirmStyle.linkInput}
+            value={randomLink}
+            editable={false}
+          />
+          <TouchableOpacity onPress={handleCopyLink} style={ConfirmStyle.copyButton}>
+            <Text style={ConfirmStyle.copyButtonText}>Copy</Text>
+          </TouchableOpacity>
+        </View>
+      )}
 
       <View style={ConfirmStyle.shadow}>
         <TouchableOpacity style={ConfirmStyle.confirmButton} onPress={handleConfirm}>
