@@ -5,6 +5,7 @@ import MapComponent from '../components/Map';
 import DateComponent from '../components/Date';
 import Confirm from './Confirm';
 import CreateStyle from '../styles/CreateStyle';
+import Notification from '../components/Notification';
 
 const Create = ({ navigation }) => {
   const [markerLocation, setMarkerLocation] = useState(null);
@@ -13,6 +14,8 @@ const Create = ({ navigation }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState(new Date());
   const [locationSelected, setLocationSelected] = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState('');
+  const [notificationVisible, setNotificationVisible] = useState(false);
 
   const mapRef = useRef(null);
 
@@ -23,20 +26,21 @@ const Create = ({ navigation }) => {
         inputAddress,
         selectedDate,
         selectedTime,
+        markerLocation,
       });
     } else {
-      Alert.alert('Please select a location, name the meeting, and choose a date and time for the meeting.');
+      setNotificationVisible(true);
+      setNotificationMessage('Please select a location, name the meeting, and choose a date and time for the meeting.');
     }
   };
-  
 
   const handleConfirm = () => {
     navigation.navigate('Confirm');
   };
 
   return (
-<LinearGradient colors={['#7B0000', '#0C0C0C']} style={CreateStyle.container}>
-<View style={CreateStyle.header}>
+    <LinearGradient colors={['#FFA07A', '#F08080']} style={CreateStyle.container}>
+      <View style={CreateStyle.header}>
         <Text style={CreateStyle.title}>Create a New Meeting</Text>
         <Text style={CreateStyle.description}>Set the meeting date and time, then select the location on the map.</Text>
       </View>
@@ -63,6 +67,11 @@ const Create = ({ navigation }) => {
         <Text style={CreateStyle.buttonText}>Confirm</Text>
       </TouchableOpacity>
 
+      <Notification 
+        message={notificationMessage}
+        visible={notificationVisible}
+        onClose={() => setNotificationVisible(false)}
+      />
     </LinearGradient>
   );
 };

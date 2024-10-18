@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Alert } from 'react-native';
+import MapView, { Marker } from 'react-native-maps';
 import ConfirmStyle from '../styles/ConfirmStyle';
+import Notification from '../components/Notification';
 
 const Confirm = ({ route, navigation }) => {
-  const { meetingName, inputAddress, selectedDate, selectedTime } = route.params;
+  const { meetingName, inputAddress, selectedDate, selectedTime, markerLocation } = route.params;
+  const [notificationVisible, setNotificationVisible] = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState('');
 
   const handleConfirm = () => {
     const currentTime = new Date();
@@ -14,27 +18,58 @@ const Confirm = ({ route, navigation }) => {
     const timeDifference = meetingTime - currentTime;
 
     if (timeDifference < 0) {
-      Alert.alert('The selected time is in the past. Please choose a future time.');
-    } else if (timeDifference < 60 * 60 * 1000) { // less than 1 hour
-      Alert.alert('Please select a time that is at least 1 hour from now.');
+      setNotificationMessage('The selected time is in the past. Please choose a future time.');
+    } else if (timeDifference < 60 * 60 * 1000) {
+      setNotificationMessage("Please select a time that is at least 1 hour from now.")
     } else {
-      Alert.alert('Meeting confirmed successfully!'); // You can add navigation logic here if needed
-      // Example: navigation.navigate('SomeOtherScreen');
+      setNotificationMessage('Meeting confirmed successfully!');
+      setNotificationVisible(true);
+      setTimeout(() => navigation.navigate("Main"), 5000);
     }
   };
 
   return (
     <View style={ConfirmStyle.container}>
       <Text style={ConfirmStyle.title}>Confirm Your Meeting</Text>
-      <Text style={ConfirmStyle.details}>
-        Meeting Name: {meetingName}{'\n'}
-        Address: {inputAddress}{'\n'}
-        Date: {selectedDate.toLocaleDateString()}{'\n'}
-        Time: {selectedTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-      </Text>
-      <TouchableOpacity style={ConfirmStyle.confirmButton} onPress={handleConfirm}>
-        <Text style={ConfirmStyle.confirmButtonText}>Confirm Meeting</Text>
-      </TouchableOpacity>
+
+      <View style={ConfirmStyle.card}>
+        <Text style={ConfirmStyle.meetingName}>{meetingName}</Text>
+        <Text style={ConfirmStyle.date}>{selectedDate.toLocaleDateString()}{"  -  "}
+        {selectedTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</Text>
+
+        {markerLocation && markerLocation.latitude && markerLocation.longitude ? (
+          <MapView
+            style={ConfirmStyle.map}
+            initialRegion={{
+              latitude: markerLocation.latitude,
+              longitude: markerLocation.longitude,
+              latitudeDelta: 0.01,
+              longitudeDelta: 0.01,
+            }}
+          >
+            <Marker
+              coordinate={{ latitude: markerLocation.latitude, longitude: markerLocation.longitude }}
+              title={meetingName}
+              description={inputAddress}
+            />
+          </MapView>
+        ) : (
+          <Text style={ConfirmStyle.error}>Location not available. Please select a valid location.</Text>
+        )}
+        <Text style={ConfirmStyle.address}>{inputAddress}</Text>
+      </View>
+
+      <View style={ConfirmStyle.shadow}>
+        <TouchableOpacity style={ConfirmStyle.confirmButton} onPress={handleConfirm}>
+          <Text style={ConfirmStyle.confirmButtonText}>Confirm Meeting</Text>
+        </TouchableOpacity>
+      </View>
+
+      <Notification
+        visible={notificationVisible}
+        message={notificationMessage}
+        onClose={() => setNotificationVisible(false)}
+      />
     </View>
   );
 };

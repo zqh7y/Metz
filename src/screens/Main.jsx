@@ -5,8 +5,8 @@ import MainStyle from '../styles/MainStyle';
 
 const Main = ({ navigation }) => {
   return (
-<LinearGradient colors={['#7B0000', '#0C0C0C']} style={MainStyle.container}>
-<View style={MainStyle.titleContainer}>
+    <LinearGradient colors={['#FFA07A', '#F08080']} style={MainStyle.container}>
+      <View style={MainStyle.titleContainer}>
         <Text style={[MainStyle.appTitle]}>Metz</Text>
         <Text style={[MainStyle.description]}>
           Your go-to app for scheduling and{'\n'}managing meetings efficiently.
