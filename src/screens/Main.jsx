@@ -5,8 +5,8 @@ import MainStyle from '../styles/MainStyle';
 
 const Main = ({ navigation }) => {
   return (
-    <LinearGradient colors={['#FF7E5F', '#feb47b']} style={MainStyle.container}>
-      <View style={MainStyle.titleContainer}>
+<LinearGradient colors={['#7B0000', '#0C0C0C']} style={MainStyle.container}>
+<View style={MainStyle.titleContainer}>
         <Text style={[MainStyle.appTitle]}>Metz</Text>
         <Text style={[MainStyle.description]}>
           Your go-to app for scheduling and{'\n'}managing meetings efficiently.
@@ -16,10 +16,6 @@ const Main = ({ navigation }) => {
         <TouchableOpacity style={MainStyle.button} onPress={() => navigation.navigate('Create')}>
           <Image source={require('../../assets/images/park.png')} style={MainStyle.image} />
           <Text style={MainStyle.buttonText}>Create Meeting</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={MainStyle.button2}>
-          <Image source={require('../../assets/images/time.png')} style={MainStyle.image2} />
-          <Text style={MainStyle.buttonText}>Meeting History</Text>
         </TouchableOpacity>
       </View>
     </LinearGradient>
