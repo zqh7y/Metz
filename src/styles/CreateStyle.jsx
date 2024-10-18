@@ -210,6 +210,26 @@ const CreateStyle = StyleSheet.create({
     width: '100%',
     letterSpacing: 1,
     borderWidth: 1,
+  },
+  button: {
+    backgroundColor: '#fff',
+    width: 370,
+    height: 40,
+    borderRadius: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 15,
+
+    //shadows 
+    shadowColor: 'rgba(250, 250, 250, 1)',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 1,
+    shadowRadius: 10,
+    elevation: 5,
+  },
+  buttonText: {
+    fontFamily: "Pac",
+    fontSize: 20,
   }
 });
 

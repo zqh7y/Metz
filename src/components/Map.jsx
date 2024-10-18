@@ -97,17 +97,18 @@ const MapComponent = ({ markerLocation, setMarkerLocation, inputAddress, setInpu
               placeholder="City, Street Name - Number..."
               value={inputAddress}
               onChangeText={setInputAddress}
+              autoFocus
             />
             <TouchableOpacity style={CreateStyle.submitButton} onPress={handleAddressSubmit}>
               <MaterialIcons name="check" size={24} color="black" />
             </TouchableOpacity>
           </View>
           <TextInput
-              style={CreateStyle.inputName}
-              placeholder="Enter meeting name..."
-              value={meetingName}
-              onChangeText={setMeetingName}
-            />
+            style={CreateStyle.inputName}
+            placeholder="Enter meeting name... (optional)"
+            value={meetingName}
+            onChangeText={setMeetingName}
+          />
         </>
       ) : (
         <Text style={CreateStyle.loadingText}>Fetching your location...</Text>
