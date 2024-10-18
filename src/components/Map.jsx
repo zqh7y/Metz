@@ -97,7 +97,6 @@ const MapComponent = ({ markerLocation, setMarkerLocation, inputAddress, setInpu
               placeholder="City, Street Name - Number..."
               value={inputAddress}
               onChangeText={setInputAddress}
-              autoFocus
             />
             <TouchableOpacity style={CreateStyle.submitButton} onPress={handleAddressSubmit}>
               <MaterialIcons name="check" size={24} color="black" />
