@@ -10,7 +10,7 @@ const Confirm = ({ route, navigation }) => {
   const [notificationVisible, setNotificationVisible] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState('');
   const [isPrivate, setIsPrivate] = useState(false);
-  const [randomLink, setRandomLink] = useState('https://meeting.link/' + Math.random().toString(36).substring(7));
+  const [randomLink, setRandomLink] = useState('https://metz.com/' + Math.random().toString(36).substring(7));
 
   const handleConfirm = () => {
     const currentTime = new Date();

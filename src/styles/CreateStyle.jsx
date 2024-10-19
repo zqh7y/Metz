@@ -213,15 +213,15 @@ const CreateStyle = StyleSheet.create({
   },
   button: {
     backgroundColor: '#fff',
-    width: 370,
+    width: 425,
     height: 40,
-    borderRadius: 10,
+    borderRadius: 0,
     justifyContent: "center",
     alignItems: "center",
     marginTop: 15,
 
     //shadows 
-    shadowColor: 'rgba(250, 250, 250, 1)',
+    shadowColor: 'rgba(0, 0, 0, 1)',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 1,
     shadowRadius: 10,
