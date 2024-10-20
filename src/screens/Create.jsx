@@ -3,7 +3,6 @@ import { View, TextInput, TouchableOpacity, Text, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import MapComponent from '../components/Map';
 import DateComponent from '../components/Date';
-import Confirm from './Confirm';
 import CreateStyle from '../styles/CreateStyle';
 import Notification from '../components/Notification';
 
@@ -39,13 +38,13 @@ const Create = ({ navigation }) => {
   };
 
   return (
-    <LinearGradient colors={['#FFA07A', '#F08080']} style={CreateStyle.container}>
+    <LinearGradient colors={['#777', '#555']} style={CreateStyle.container}>
       <View style={CreateStyle.header}>
         <Text style={CreateStyle.title}>Create a New Meeting</Text>
         <Text style={CreateStyle.description}>Set the meeting date and time, then select the location on the map.</Text>
       </View>
 
-      <>
+      <View style={CreateStyle.mainContainer}>
         <DateComponent
           selectedDate={selectedDate}
           setSelectedDate={setSelectedDate}
@@ -61,7 +60,7 @@ const Create = ({ navigation }) => {
           meetingName={meetingName}
           setMeetingName={setMeetingName}
         />
-      </>
+      </View>
 
       <TouchableOpacity style={CreateStyle.button} onPress={handleNext}>
         <Text style={CreateStyle.buttonText}>Confirm</Text>

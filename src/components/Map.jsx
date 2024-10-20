@@ -5,6 +5,7 @@ import * as Location from 'expo-location';
 import * as LocationGeocoding from 'expo-location';
 import { MaterialIcons } from '@expo/vector-icons';
 import CreateStyle from '../styles/CreateStyle';
+import nightModeStyle from '../MapData/NightModeStyle';
 
 const MapComponent = ({ markerLocation, setMarkerLocation, inputAddress, setInputAddress, mapRef, meetingName, setMeetingName }) => {
   const [location, setLocation] = useState(null);
@@ -75,21 +76,24 @@ const MapComponent = ({ markerLocation, setMarkerLocation, inputAddress, setInpu
       <Text style={CreateStyle.text}>Choose meeting location 🏡</Text>
       {location ? (
         <>
-          <MapView
-            ref={mapRef}
-            style={CreateStyle.map}
-            initialRegion={{
-              latitude: location.latitude,
-              longitude: location.longitude,
-              latitudeDelta: 0.01,
-              longitudeDelta: 0.01,
-            }}
-            onPress={handleMapPress}
-          >
-            {markerLocation && (
-              <Marker coordinate={markerLocation} title={inputAddress} description={"Selected Place"} />
-            )}
-          </MapView>
+          <View style={CreateStyle.mapContainer2}>
+            <MapView
+              ref={mapRef}
+              style={CreateStyle.map}
+              customMapStyle={nightModeStyle}
+              initialRegion={{
+                latitude: location.latitude,
+                longitude: location.longitude,
+                latitudeDelta: 0.01,
+                longitudeDelta: 0.01,
+              }}
+              onPress={handleMapPress}
+            >
+              {markerLocation && (
+                <Marker coordinate={markerLocation} title={inputAddress} description={"Selected Place"} />
+              )}
+            </MapView>
+          </View>
 
           <View style={CreateStyle.inputRow}>
             <TextInput
@@ -97,9 +101,10 @@ const MapComponent = ({ markerLocation, setMarkerLocation, inputAddress, setInpu
               placeholder="City, Street Name - Number..."
               value={inputAddress}
               onChangeText={setInputAddress}
+              placeholderTextColor="#ccc"
             />
             <TouchableOpacity style={CreateStyle.submitButton} onPress={handleAddressSubmit}>
-              <MaterialIcons name="check" size={24} color="black" />
+              <MaterialIcons name="check" size={24} color="#fff" />
             </TouchableOpacity>
           </View>
           <TextInput
@@ -107,6 +112,7 @@ const MapComponent = ({ markerLocation, setMarkerLocation, inputAddress, setInpu
             placeholder="Enter meeting name... (optional)"
             value={meetingName}
             onChangeText={setMeetingName}
+            placeholderTextColor="#ccc"
           />
         </>
       ) : (

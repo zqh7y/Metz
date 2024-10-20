@@ -1,90 +1,133 @@
-import { StyleSheet } from 'react-native';
+import { createContext } from 'react';
+import { Dimensions, StyleSheet } from 'react-native';
 
 const MainStyle = StyleSheet.create({
   container: {
+    height: Dimensions.get('window').height * 1.05,
+    paddingTop: 30,
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#222',
+    borderRadius: 100,
+    paddingLeft: 15,
+    paddingRight: 6,
+    marginVertical: 20,
+    marginHorizontal: 20,
+  },
+  searchInput: {
     flex: 1,
+    color: 'white',
+    padding: 10,
+    fontFamily: 'Kan',
+    letterSpacing: 1.2,
+  },
+  buttonSearchContainer: {
+    backgroundColor: "#444",
+    width: 40,
+    height: 40,
+    borderRadius: 50,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  ideaContainer: {
+    borderRadius: 10,
+    padding: 15,
+    marginVertical: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    marginHorizontal: 20,
+  },
+  textContainer: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    alignItems: "center",
+  },
+  descrText: {
+    fontSize: 14,
+    color: '#000',
+    textAlign:"center",
+    fontFamily: "Kan",
+  },
+  titleText: {
+    fontSize: 28,
+    color: '#000',
+    fontFamily: "Pac",
+    marginBottom: 110, 
+    marginTop: -10,   
+  },
+  mainContainer: {
+    backgroundColor: "#151515",
+    height: "60%",
+    padding: 15,
+  },
+  rowContainer: {
+    flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 20,
+    marginBottom: 15,
+    paddingHorizontal: 10,
   },
-  titleContainer: {
-    marginTop: 70,
-  },
-  appTitle: {
-    fontSize: 80,
-    fontFamily: "Pac",
-    color: '#fff',
-    marginBottom: -10,
-    textAlign: 'center',
-  },
-  description: {
+  mapDescription: {
+    color: 'white',
     fontSize: 12,
-    color: '#fff',
-    marginBottom: 20,
-    fontFamily: "Kan",
-    width: '25%',
-    textAlign: "center",
-    lineHeight: 12,
+    fontFamily: 'Kan',
   },
-  buttonContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
+  mapTitle: {
+    color: 'white',
+    fontSize: 18,
+    fontFamily: 'Kan',
+    letterSpacing: 1.4,
+    marginTop: -4,
+  },
+  map: {
     width: '100%',
-    marginBottom: 20,
-  },
-  button: {
-    backgroundColor: 'rgba(255, 255, 255, .99)',
-    padding: 15,
+    height: 200,
     borderRadius: 10,
-    margin: 2,
-    width: 350,
-    height: 80,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-
-    //shadows 
-    shadowColor: 'rgba(240, 240, 240, 1)',
-    shadowOffset: { width: 8, height: 8 },
-    shadowOpacity: 1, 
-    shadowRadius: 10,
-    elevation: 0, 
   },
-  button2: {
-    backgroundColor: 'rgba(255, 255, 255, 1)',
-    padding: 15,
-    borderBottomLeftRadius: 40,
-    borderBottomRightRadius: 40,
-    margin: 3,
-    width: 350,
-    height: 80,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-
-    //shadows 
-    shadowColor: 'rgba(240, 240, 240, 1)',
-    shadowOffset: { width: 8, height: 8 },
-    shadowOpacity: 1, 
-    shadowRadius: 10,
-    elevation: 0, 
-  },
-  buttonText: {
-    color: '#000',
-    textAlign: 'center',
-    fontSize: 20,
-    fontFamily: "Kan",
-    letterSpacing: 2,
-    right: 50,
+  mapContainer: {
+    height: 210,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    padding: 5,
+    borderRadius: 5,
   },
   image: {
-    width: 80,
-    height: 80,
+    width: 300,
+    height: 100,
+    position: "absolute",
+    top: 110,
   },
-  image2: {
-    width: 70,
+  createContainer: {
+    width: 383,
     height: 70,
+    backgroundColor: "#222",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: 15,
+    borderRadius: 15,
+    position: "absolute",
+    bottom: 40,
+    left: 15.5,
+    flexDirection: "row",
   },
+  createTitle: {
+    color: "#ccc",
+    fontSize: 25,
+    fontFamily: "Kan"
+  },
+  createDescr: {
+    color: "#ccc",
+    fontSize: 13,
+    fontFamily: "Kan",
+    lineHeight: 14,
+    marginBottom: 3,
+  },
+  createView: {
+    width: 300,
+  }
 });
 
 export default MainStyle;

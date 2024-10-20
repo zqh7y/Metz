@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import CreateStyle from '../styles/CreateStyle';
+import { Ionicons } from '@expo/vector-icons';
 
 const DateComponent = ({ selectedDate, setSelectedDate, selectedTime, setSelectedTime }) => {
   const [showDatePicker, setShowDatePicker] = useState(false);
@@ -47,7 +48,6 @@ const DateComponent = ({ selectedDate, setSelectedDate, selectedTime, setSelecte
         <TouchableOpacity onPress={() => setShowDatePicker(true)}>
           <Text>{renderDateDigits()}</Text>
         </TouchableOpacity>
-        <View style={CreateStyle.hr1} />
         <TouchableOpacity onPress={() => setShowTimePicker(true)}>
           {renderTimeDigits()}
         </TouchableOpacity>
@@ -62,6 +62,7 @@ const DateComponent = ({ selectedDate, setSelectedDate, selectedTime, setSelecte
             setShowDatePicker(false);
             if (date) setSelectedDate(date);
           }}
+          themeVariant='dark'
         />
       )}
 
@@ -74,6 +75,7 @@ const DateComponent = ({ selectedDate, setSelectedDate, selectedTime, setSelecte
             setShowTimePicker(false);
             if (time) setSelectedTime(time);
           }}
+          themeVariant='dark'
         />
       )}
     </View>
