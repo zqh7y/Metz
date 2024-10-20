@@ -3,6 +3,8 @@ import { View, Text, TouchableOpacity, Alert, TextInput, Clipboard } from 'react
 import MapView, { Marker } from 'react-native-maps';
 import ConfirmStyle from '../styles/ConfirmStyle';
 import Notification from '../components/Notification';
+import nightModeStyle from '../MapData/NightModeStyle';
+import { LinearGradient } from 'expo-linear-gradient';
 import { Switch } from 'react-native';
 
 const Confirm = ({ route, navigation }) => {
@@ -38,62 +40,65 @@ const Confirm = ({ route, navigation }) => {
   };
 
   return (
-    <View style={ConfirmStyle.container}>
+    <LinearGradient colors={['#777', '#555']} style={ConfirmStyle.container}>
       <Text style={ConfirmStyle.title}>Confirm Your Meeting</Text>
 
-      <View style={ConfirmStyle.card}>
-        <Text style={ConfirmStyle.meetingName}>{meetingName}</Text>
-        <Text style={ConfirmStyle.date}>{selectedDate.toLocaleDateString()}{"  -  "}
-        {selectedTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</Text>
+      <View style={ConfirmStyle.area}>
+        <View style={ConfirmStyle.card}>
+          <Text style={ConfirmStyle.meetingName}>{meetingName}</Text>
+          <Text style={ConfirmStyle.date}>{selectedDate.toLocaleDateString()}{"  -  "}
+          {selectedTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</Text>
 
-        {markerLocation && markerLocation.latitude && markerLocation.longitude ? (
-          <MapView
-            style={ConfirmStyle.map}
-            initialRegion={{
-              latitude: markerLocation.latitude,
-              longitude: markerLocation.longitude,
-              latitudeDelta: 0.01,
-              longitudeDelta: 0.01,
-            }}
-          >
-            <Marker
-              coordinate={{ latitude: markerLocation.latitude, longitude: markerLocation.longitude }}
-              title={meetingName}
-              description={inputAddress}
-            />
-          </MapView>
-        ) : (
-          <Text style={ConfirmStyle.error}>Location not available. Please select a valid location.</Text>
-        )}
-        <Text style={ConfirmStyle.address}>{inputAddress}</Text>
-      </View>
+          {markerLocation && markerLocation.latitude && markerLocation.longitude ? (
+            <MapView
+              style={ConfirmStyle.map}
+              customMapStyle={nightModeStyle}
+              initialRegion={{
+                latitude: markerLocation.latitude,
+                longitude: markerLocation.longitude,
+                latitudeDelta: 0.005,
+                longitudeDelta: 0.005,
+              }}
+            >
+              <Marker
+                coordinate={{ latitude: markerLocation.latitude, longitude: markerLocation.longitude }}
+                title={meetingName}
+                description={inputAddress}
+              />
+            </MapView>
+          ) : (
+            <Text style={ConfirmStyle.error}>Location not available. Please select a valid location.</Text>
+          )}
+          <Text style={ConfirmStyle.address}>{inputAddress}</Text>
+        </View>
 
-      <View style={ConfirmStyle.switchContainer}>
-        <Text style={ConfirmStyle.switchLabel}>Private Meeting</Text>
-        <Switch
-          value={isPrivate}
-          onValueChange={setIsPrivate}
-          thumbColor={isPrivate ? '#FF7E5F' : '#ccc'}
-        />
-      </View>
-
-      {isPrivate && (
-        <View style={ConfirmStyle.linkContainer}>
-          <TextInput
-            style={ConfirmStyle.linkInput}
-            value={randomLink}
-            editable={false}
+        <View style={ConfirmStyle.switchContainer}>
+          <Text style={ConfirmStyle.switchLabel}>Private Meeting</Text>
+          <Switch
+            value={isPrivate}
+            onValueChange={setIsPrivate}
+            thumbColor={isPrivate ? '#FF7E5F' : '#fff'}
           />
-          <TouchableOpacity onPress={handleCopyLink} style={ConfirmStyle.copyButton}>
-            <Text style={ConfirmStyle.copyButtonText}>Copy</Text>
+        </View>
+
+        {isPrivate && (
+          <View style={ConfirmStyle.linkContainer}>
+            <TextInput
+              style={ConfirmStyle.linkInput}
+              value={randomLink}
+              editable={false}
+            />
+            <TouchableOpacity onPress={handleCopyLink} style={ConfirmStyle.copyButton}>
+              <Text style={ConfirmStyle.copyButtonText}>Copy</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+
+        <View style={ConfirmStyle.shadow}>
+          <TouchableOpacity style={ConfirmStyle.confirmButton} onPress={handleConfirm}>
+            <Text style={ConfirmStyle.confirmButtonText}>Confirm Meeting</Text>
           </TouchableOpacity>
         </View>
-      )}
-
-      <View style={ConfirmStyle.shadow}>
-        <TouchableOpacity style={ConfirmStyle.confirmButton} onPress={handleConfirm}>
-          <Text style={ConfirmStyle.confirmButtonText}>Confirm Meeting</Text>
-        </TouchableOpacity>
       </View>
 
       <Notification
@@ -101,7 +106,7 @@ const Confirm = ({ route, navigation }) => {
         message={notificationMessage}
         onClose={() => setNotificationVisible(false)}
       />
-    </View>
+    </LinearGradient>
   );
 };
 

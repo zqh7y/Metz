@@ -1,44 +1,47 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
 const ConfirmStyle = StyleSheet.create({
   container: {
-    marginTop: 100,
-    padding: 20,
-    backgroundColor: '#F5F5F5',
+    paddingTop: 100,
+    height: Dimensions.get('window').height * 1.05,
   },
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: '#222',
     paddingTop: 15,
     paddingHorizontal: 15,
     paddingBottom: 5,
     borderRadius: 8,
     shadowColor: '#444',
     shadowOpacity: 0.1,
+    borderColor: "#333",
+    borderWidth: 1,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
     elevation: 5,
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontFamily: "Pac",
-    marginBottom: 30,
+    marginBottom: 70,
     textAlign: 'center',
+    color: "#000",
   },
   meetingName: {
     fontSize: 27,
-    color: '#333',
+    color: '#ccc',
     fontFamily: "Kan",
     textAlign: 'center',
-    letterSpacing: 1.2
+    letterSpacing: 1.2,
   },
   address: {
     fontSize: 19,
-    color: '#333',
+    color: '#ccc',
     fontFamily: "Kan",
+    paddingVertical: 3,
   },
   date: {
     fontSize: 22,
-    color: '#333',
+    color: '#ccc',
     fontFamily: "Pac",
     textAlign: 'center',
   },
@@ -55,7 +58,7 @@ const ConfirmStyle = StyleSheet.create({
   switchLabel: {
     fontSize: 18,
     fontFamily: "Kan",
-    color: '#333',
+    color: '#ccc',
     marginRight: 30,
     left: 20,
   },
@@ -66,18 +69,20 @@ const ConfirmStyle = StyleSheet.create({
   },
   linkInput: {
     flex: 1,
-    borderColor: '#ccc',
+    borderColor: '#444',
     borderWidth: 1,
     borderRadius: 8,
-    padding: 10,
-    backgroundColor: '#f0f0f0',
-    color: "#333",
+    padding: 7,
+    paddingHorizontal: 10,
+    backgroundColor: '#333',
+    color: "#ccc",
     letterSpacing: 1.2,
   },
   copyButton: {
     marginLeft: 10,
     backgroundColor: '#FF7E5F',
     padding: 15,
+    paddingVertical: 12,
     borderRadius: 8,
   },
   copyButtonText: {
@@ -88,7 +93,7 @@ const ConfirmStyle = StyleSheet.create({
   confirmButton: {
     backgroundColor: '#FF7E5F',
     paddingVertical: 12,
-    borderRadius: 50,
+    borderRadius: 10,
     alignItems: 'center',
     shadowColor: '#FF7E5F',
     shadowOpacity: 1,
@@ -107,6 +112,11 @@ const ConfirmStyle = StyleSheet.create({
     color: 'red',
     textAlign: 'center',
     marginTop: 10,
+  },
+  area: {
+    backgroundColor: "#111",
+    padding: 20,
+    height: 750,
   },
 });
 

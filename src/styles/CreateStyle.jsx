@@ -14,12 +14,12 @@ const CreateStyle = StyleSheet.create({
     letterSpacing: 1.5,
   },
   mapContainer: {
-    height: 130,
+    height: 345,
     borderWidth: 1,
     borderColor: "#222",
-    backgroundColor: "#353535",
+    backgroundColor: "#222",
     padding: 5,
-    borderRadius: 20,
+    borderRadius: 10,
     width: 390,
     left: 10,
     marginTop: 10,
@@ -152,11 +152,19 @@ const CreateStyle = StyleSheet.create({
     flexDirection: "row",
   },
   buttonText: {
-    color: '#fff',
-    fontSize: 18,
+    color: '#ccc',
+    fontSize: 22,
     fontFamily: 'Kan',
     letterSpacing: 1.2,
+    left: 5,
   },
+  buttonDescr: {
+    color: "#ccc",
+    fontFamily: "Kan",
+    width: 300,
+    lineHeight: 15,
+    fontSize: 13,
+  }
 });
 
 export default CreateStyle;

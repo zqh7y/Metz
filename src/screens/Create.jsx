@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { View, TextInput, TouchableOpacity, Text, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Ionicons } from '@expo/vector-icons';
 import MapComponent from '../components/Map';
 import DateComponent from '../components/Date';
 import CreateStyle from '../styles/CreateStyle';
@@ -63,7 +64,11 @@ const Create = ({ navigation }) => {
       </View>
 
       <TouchableOpacity style={CreateStyle.button} onPress={handleNext}>
-        <Text style={CreateStyle.buttonText}>Confirm</Text>
+        <View>
+          <Text style={CreateStyle.buttonText}>Confirm Metz</Text>
+          <Text style={CreateStyle.buttonDescr}>Go to the next confirm section to make sure every Metz information is correct.</Text>
+        </View>
+        <Ionicons name="chevron-forward" size={24} color="#ccc" />
       </TouchableOpacity>
 
       <Notification 
