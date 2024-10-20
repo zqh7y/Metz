@@ -68,7 +68,7 @@ const Create = ({ navigation }) => {
           <Text style={CreateStyle.buttonText}>Confirm Metz</Text>
           <Text style={CreateStyle.buttonDescr}>Go to the next confirm section to make sure every Metz information is correct.</Text>
         </View>
-        <Ionicons name="chevron-forward" size={24} color="#ccc" />
+        <Ionicons name="chevron-forward" size={26} color="#ccc" />
       </TouchableOpacity>
 
       <Notification 

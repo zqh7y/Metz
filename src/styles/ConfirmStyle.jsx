@@ -72,7 +72,7 @@ const ConfirmStyle = StyleSheet.create({
     borderColor: '#444',
     borderWidth: 1,
     borderRadius: 8,
-    padding: 7,
+    padding: 5,
     paddingHorizontal: 10,
     backgroundColor: '#333',
     color: "#ccc",
@@ -82,7 +82,7 @@ const ConfirmStyle = StyleSheet.create({
     marginLeft: 10,
     backgroundColor: '#FF7E5F',
     padding: 15,
-    paddingVertical: 12,
+    paddingVertical: 9,
     borderRadius: 8,
   },
   copyButtonText: {
@@ -100,6 +100,7 @@ const ConfirmStyle = StyleSheet.create({
     shadowOffset: { width: 5, height: 20 },
     shadowRadius: 8,
     elevation: 20,
+    marginTop: 10,
   },
   confirmButtonText: {
     color: '#fff',

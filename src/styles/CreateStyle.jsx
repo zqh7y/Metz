@@ -16,8 +16,8 @@ const CreateStyle = StyleSheet.create({
   mapContainer: {
     height: 345,
     borderWidth: 1,
-    borderColor: "#222",
-    backgroundColor: "#222",
+    borderColor: "#151515",
+    backgroundColor: "#111",
     padding: 5,
     borderRadius: 10,
     width: 390,
@@ -159,11 +159,12 @@ const CreateStyle = StyleSheet.create({
     left: 5,
   },
   buttonDescr: {
-    color: "#ccc",
-    fontFamily: "Kan",
-    width: 300,
-    lineHeight: 15,
+    color: '#ccc',
     fontSize: 13,
+    fontFamily: 'Kan',
+    letterSpacing: 1.2,
+    width: 300,
+    lineHeight: 14,
   }
 });
 
