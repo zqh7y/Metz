@@ -20,7 +20,7 @@ const Search = () => (
     <View style={MainStyle.ideaContainer}>
       <View style={MainStyle.textContainer}>
         <Text style={MainStyle.descrText}>Search Example:</Text>
-        <Text style={MainStyle.titleText}>Birthday In Tel-Aviv</Text>
+        <Text style={MainStyle.titleText}>Marathon In Tel-Aviv</Text>
       </View>
       <Image source={require('../../../assets/images/natureBW.png')} style={MainStyle.image} />
     </View>

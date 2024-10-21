@@ -60,8 +60,9 @@ const MainStyle = StyleSheet.create({
   },
   mainContainer: {
     backgroundColor: "#151515",
-    height: "60%",
+    height: "90%",
     padding: 15,
+    borderRadius: 20,
   },
   rowContainer: {
     flexDirection: 'row',
@@ -109,7 +110,7 @@ const MainStyle = StyleSheet.create({
     padding: 15,
     borderRadius: 15,
     position: "absolute",
-    bottom: 40,
+    bottom: 90,
     left: 15.5,
     flexDirection: "row",
   },
