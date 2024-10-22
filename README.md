@@ -38,3 +38,10 @@ npm install openai
 ## Release Date
 
 The building proccess designing, frontend, backend has done just only with 1 person so this could take ***around 2-3 months*** to build the first Metz version and publish to Google Play.
+
+## Photos Of The Project [updated every 2-3 days] 22/10/24
+
+<img src="https://github.com/user-attachments/assets/a5c927d6-1522-4063-b9e0-825b025362df" alt="Alt text" width="300"/>
+
+<img src="https://github.com/user-attachments/assets/759557b2-c767-4fcf-856b-7f8c8e25cadc" alt="Alt text" width="300"/>
+
