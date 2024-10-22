@@ -2,6 +2,12 @@ import React from 'react';
 import { View, TextInput, Text, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import MainStyle from '../../styles/MainStyle';
+import searchOptions from '../../data/fakeData/SearchOptions';
+
+const getRandom = () => {
+  const randomI = Math.floor(Math.random() * searchOptions.length);
+  return searchOptions[randomI].example;
+};
 
 const Search = () => (
   <>
@@ -20,7 +26,7 @@ const Search = () => (
     <View style={MainStyle.ideaContainer}>
       <View style={MainStyle.textContainer}>
         <Text style={MainStyle.descrText}>Search Example:</Text>
-        <Text style={MainStyle.titleText}>Marathon In Tel-Aviv</Text>
+        <Text style={MainStyle.titleText}>{getRandom()}</Text>
       </View>
       <Image source={require('../../../assets/images/natureBW.png')} style={MainStyle.image} />
     </View>

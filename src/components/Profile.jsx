@@ -10,7 +10,7 @@ const Profile = ({ city }) => {
         style={ProfileStyle.profileImage}
       />
       <View style={ProfileStyle.infoContainer}>
-        <Text style={ProfileStyle.nameText}>Welcome, John Doe!</Text>
+        <Text style={ProfileStyle.nameText}>Welcome, Guest!</Text>
         <Text style={ProfileStyle.statusText}>{city ? `Looks like you located in ${city}` : "Didn't got your location..."}</Text>
       </View>
     </View>
