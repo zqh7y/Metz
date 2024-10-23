@@ -9,16 +9,16 @@ Project used **React Native Expo JavaScript** for Frontend also **C#** for Backe
 
 ## Start react native expo project
 
-***Installing Expo*** before starting
+***Installing Expo*** before starting.
 ```
 npm install -g expo-cli
 ```
-***Building Project*** file & project itself
+***Building Project*** file & project itself.
 ```
 expo init project-name
 cd  project-name
 ```
-***Select Folder*** project just created **=>** then ***Run Expo Server***
+***Select Folder*** project just created **=>** then ***Run Expo Server***.
 ```
 npx expo start
 ```
