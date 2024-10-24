@@ -19,6 +19,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      
       "package": "com.justariel.metz"
     },
     "web": {
