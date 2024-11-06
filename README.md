@@ -1,4 +1,4 @@
-# Metz - Project About Meetings 
+# Metz - Project About Meetings / Stopped Active For 1 Month.
 
 Making a comeback from a 5 failures apps about this idea while this 2 years of experience 
 all started from GetTogetherGo app which havent even published then, 
